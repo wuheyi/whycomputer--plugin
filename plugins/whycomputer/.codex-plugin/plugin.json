@@ -1,7 +1,7 @@
 {
   "name": "whycomputer",
-  "version": "0.1.0",
-  "description": "Control local macOS apps through the installed whycomputer app and CLI.",
+  "version": "0.1.1",
+  "description": "Control local macOS apps through the bundled whycomputer runtime installer and CLI.",
   "author": {
     "name": "wuheyi"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "whycomputer",
     "shortDescription": "Control local macOS apps via CLI.",
-    "longDescription": "whycomputer exposes a local macOS automation skill for observing app accessibility trees, taking screenshots, clicking, typing, scrolling, dragging, selecting text, and managing the installed app service.",
+    "longDescription": "whycomputer exposes a local macOS automation skill for observing app accessibility trees, taking screenshots, clicking, typing, scrolling, dragging, selecting text, and managing the installed app service. The plugin includes a signed macOS runtime installer for the app and CLI, but not the Swift source code.",
     "developerName": "wuheyi",
     "category": "Productivity",
     "capabilities": [

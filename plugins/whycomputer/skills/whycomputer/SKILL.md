@@ -12,6 +12,22 @@ other computer-use plugins unless the user explicitly asks for them.
 
 ## Preconditions
 
+If `whycomputer` is missing or `~/Applications/whycomputer.app` does not exist,
+install the bundled runtime before GUI actions:
+
+```bash
+INSTALLER="$HOME/.codex/.tmp/marketplaces/whycomputer-plugin/plugins/whycomputer/scripts/install-runtime.sh"
+if [ ! -x "$INSTALLER" ]; then
+  INSTALLER="$(find "$HOME/.codex" -path '*/whycomputer/scripts/install-runtime.sh' -print | sort | tail -n 1)"
+fi
+[ -x "$INSTALLER" ] && "$INSTALLER"
+```
+
+If the installer cannot write to `~/Applications`, ask the user to run the same
+script from Terminal or set `WHYCOMPUTER_APP_PATH` to a writable `.app` path.
+This plugin bundles an Apple Silicon macOS 14+ signed runtime package; it does
+not bundle the Swift source code.
+
 Start or inspect the app service before GUI actions:
 
 ```bash

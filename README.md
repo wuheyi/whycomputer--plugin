@@ -7,15 +7,24 @@ It intentionally contains only:
 - `.agents/plugins/marketplace.json`
 - `plugins/whycomputer/.codex-plugin/plugin.json`
 - `plugins/whycomputer/skills/whycomputer/`
+- `plugins/whycomputer/scripts/install-runtime.sh`
+- `plugins/whycomputer/runtime/whycomputer-runtime-macos-arm64.zip`
 
 It does not contain the Swift package, app implementation, tests, build
-artifacts, or `whycomputer` source code.
+tests, or `whycomputer` source code. The runtime zip contains only signed
+macOS binaries for the app and CLI.
 
 ## Install from GitHub
 
 ```bash
-codex plugin marketplace add https://github.com/wuheyi/whycomputer--plugin.git --ref main
+codex plugin marketplace add https://github.com/wuheyi/whycomputer--plugin.git --ref main --sparse .agents --sparse plugins/whycomputer
 codex plugin add whycomputer@whycomputer-plugin
+```
+
+Install the local macOS runtime that the plugin uses:
+
+```bash
+~/.codex/.tmp/marketplaces/whycomputer-plugin/plugins/whycomputer/scripts/install-runtime.sh
 ```
 
 Start a new Codex thread after installing so the `whycomputer` skill is loaded.
@@ -34,9 +43,8 @@ Sparse path:
 plugins/whycomputer
 ```
 
-The sparse path is optional for this repository because it only contains plugin
-distribution files, but the two-line value above keeps the install focused on
-the marketplace and plugin bundle.
+Keep both sparse paths. The `plugins/whycomputer` path includes the bundled
+runtime installer and zip, so no Homebrew package or source checkout is needed.
 
 After the marketplace appears, open `whycomputer` and select **Add to Codex**.
 
@@ -53,12 +61,19 @@ Workspace share links are managed by Codex and are intended for users in the
 same ChatGPT workspace. For users outside that workspace, use the GitHub
 marketplace install flow above.
 
-## Local prerequisite
+## Local runtime
 
-The plugin teaches Codex how to use the `whycomputer` command. It does not
-install the macOS app or CLI.
+The plugin teaches Codex how to use the `whycomputer` command and includes a
+local runtime installer for Apple Silicon macOS 14+.
 
-Before using the plugin, each machine needs a working local installation:
+The installer writes:
+
+```text
+~/Applications/whycomputer.app
+~/.local/bin/whycomputer
+```
+
+Then verify:
 
 ```bash
 whycomputer version
@@ -66,10 +81,12 @@ whycomputer service-status
 whycomputer permissions-status
 ```
 
-The expected app path is:
+If Codex cannot write to `~/Applications`, run the installer from Terminal, or
+choose another app location:
 
-```text
-~/Applications/whycomputer.app
+```bash
+WHYCOMPUTER_APP_PATH="$HOME/.local/share/whycomputer/whycomputer.app" \
+  ~/.codex/.tmp/marketplaces/whycomputer-plugin/plugins/whycomputer/scripts/install-runtime.sh
 ```
 
 ## Why not share a codex:// local link?
