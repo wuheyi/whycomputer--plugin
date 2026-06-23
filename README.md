@@ -20,6 +20,39 @@ codex plugin add whycomputer@whycomputer-plugin
 
 Start a new Codex thread after installing so the `whycomputer` skill is loaded.
 
+## Add from the Codex app
+
+Codex also supports adding this marketplace from the app UI.
+
+Open **Plugins**, click **+**, then fill:
+
+```text
+Source: https://github.com/wuheyi/whycomputer--plugin.git
+Git ref: main
+Sparse path:
+.agents
+plugins/whycomputer
+```
+
+The sparse path is optional for this repository because it only contains plugin
+distribution files, but the two-line value above keeps the install focused on
+the marketplace and plugin bundle.
+
+After the marketplace appears, open `whycomputer` and select **Add to Codex**.
+
+## Share link from the Codex app
+
+For a click-to-install link, use Codex workspace sharing:
+
+1. Add and install `whycomputer` in your Codex app.
+2. Open the `whycomputer` plugin details page.
+3. Select **Share**.
+4. Copy the share link or invite workspace members.
+
+Workspace share links are managed by Codex and are intended for users in the
+same ChatGPT workspace. For users outside that workspace, use the GitHub
+marketplace install flow above.
+
 ## Local prerequisite
 
 The plugin teaches Codex how to use the `whycomputer` command. It does not
