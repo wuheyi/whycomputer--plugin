@@ -1,6 +1,6 @@
 {
   "name": "whycomputer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Control local macOS apps through the bundled whycomputer runtime installer and CLI.",
   "author": {
     "name": "wuheyi"
@@ -17,6 +17,9 @@
       "Local automation",
       "Write"
     ],
+    "brandColor": "#459BE8",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
     "defaultPrompt": [
       "Use whycomputer to inspect Finder.",
       "Check whycomputer permissions.",

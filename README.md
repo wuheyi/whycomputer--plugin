@@ -6,6 +6,8 @@ It intentionally contains only:
 
 - `.agents/plugins/marketplace.json`
 - `plugins/whycomputer/.codex-plugin/plugin.json`
+- `plugins/whycomputer/assets/icon.png`
+- `plugins/whycomputer/assets/logo.png`
 - `plugins/whycomputer/skills/whycomputer/`
 - `plugins/whycomputer/scripts/install-runtime.sh`
 - `plugins/whycomputer/runtime/whycomputer-runtime-macos-arm64.zip`
