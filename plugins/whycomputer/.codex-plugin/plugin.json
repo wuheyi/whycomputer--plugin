@@ -1,0 +1,26 @@
+{
+  "name": "whycomputer",
+  "version": "0.1.0",
+  "description": "Control local macOS apps through the installed whycomputer app and CLI.",
+  "author": {
+    "name": "wuheyi"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "whycomputer",
+    "shortDescription": "Control local macOS apps via CLI.",
+    "longDescription": "whycomputer exposes a local macOS automation skill for observing app accessibility trees, taking screenshots, clicking, typing, scrolling, dragging, selecting text, and managing the installed app service.",
+    "developerName": "wuheyi",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Local automation",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use whycomputer to inspect Finder.",
+      "Check whycomputer permissions.",
+      "Control a local macOS app."
+    ]
+  }
+}

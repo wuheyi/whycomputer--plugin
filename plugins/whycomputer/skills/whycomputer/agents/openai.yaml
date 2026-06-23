@@ -1,0 +1,4 @@
+interface:
+  display_name: "whycomputer"
+  short_description: "Control local macOS apps via CLI"
+  default_prompt: "Use $whycomputer to inspect and operate the requested macOS app."

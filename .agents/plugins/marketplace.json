@@ -1,0 +1,20 @@
+{
+  "name": "whycomputer-plugin",
+  "interface": {
+    "displayName": "Whycomputer Plugin"
+  },
+  "plugins": [
+    {
+      "name": "whycomputer",
+      "source": {
+        "source": "local",
+        "path": "./plugins/whycomputer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
